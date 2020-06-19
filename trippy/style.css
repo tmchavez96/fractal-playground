@@ -1,0 +1,26 @@
+body{
+  background-color: #242526;
+  text-align: center;
+}
+
+.bodyDiv{
+  position: relative;
+}
+
+.myButton{
+  position: relative;
+  width: 10%;
+  background-color: white;
+  border: solid;
+  cursor: pointer;
+  margin-left: 45%;
+}
+
+.animCont{
+  position: relative;
+  width: 80%;
+  height: 500px;
+  margin-left: 10%;
+  background-color: black;
+  overflow: hidden;
+}
