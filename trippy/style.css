@@ -24,3 +24,11 @@ body{
   background-color: black;
   overflow: hidden;
 }
+
+.waveCont{
+  height: 240px;
+  width: 100%;
+  margin-bottom: 40px;
+  position: relative;
+  overflow: hidden;
+}

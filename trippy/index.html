@@ -4,6 +4,7 @@
 <title>Trippy</title>
 <link rel="stylesheet" href="style.css">
 <script src="myjs.js"></script>
+<script src="waves.js"></script>
 </head>
 <body>
 <div class="bodyDiv">
@@ -11,6 +12,16 @@
   <div class="myButton" onclick="load()"> Start </div>
   <div class="animCont" id="mycanvas">
     <div id="temp"></div>
+  </div>
+  <br>
+  <div class="myButton" onclick="loadWaves()"> Start </div>
+  <div class="animCont" id="wavecanvas">
+    <div class="waveCont" id="waveTop">
+      <div id="waveTemp1"></div>
+    </div>
+    <div class="waveCont" id="waveBottom">
+      <div id="waveTemp2"></div>
+    </div>
   </div>
 </div>
 </body>
