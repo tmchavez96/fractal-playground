@@ -1,17 +1,17 @@
 function loadWaves(){
     
     setTimeout( () => {
-        for(var i = 0; i < 40; i++){
-            if(i % 3 == 0){
+        for(var i = 0; i < 80; i++){
+            if(i % 3 == 0 || i % 5 == 0){
                 continue
             }
             if(i % 4 == 0){
                 setTimeout( () =>{
-                    wrapper("yellow")
+                    wrapper("#ed6802")
                 }, 200 * i)
             }else {
                 setTimeout( () =>{
-                    wrapper("red")
+                    wrapper("#edab02")
                 }, 200 * i)
             }
         }
@@ -33,8 +33,10 @@ function wrapper(color){
 
 
 function addWaves(color){
-    addBottomWave(color)
-    addTopWave(color)
+    addBottomWave(color, true)
+    addBottomWave(color, false)
+    addTopWave(color, true)
+    addTopWave(color, false)
 }
 
 
@@ -45,7 +47,7 @@ function animateWaves(){
     animateBottomWaves()
 }
 
-function addTopWave(color){
+function addTopWave(color, isBlur){
     var canvas = document.getElementById("waveTop");
     var child = document.getElementById("waveTemp1");
 
@@ -60,6 +62,12 @@ function addTopWave(color){
     cur.style.width = "20px";
     cur.style.height = "20px";
 
+    if(isBlur){
+        cur.style.width = "30px";
+        cur.style.height = "30px";
+        cur.style.filter = "blur(15px)"
+    }
+
     cur.style.backgroundColor = "none"
 
     cur.style.border = "solid " + color  + " 10px"
@@ -67,11 +75,11 @@ function addTopWave(color){
 
     cur.style.top = numToString(height/2);
     cur.style.left ="-200px";
-    cur.style.transition = "3s"
+    cur.style.transition = "6s"
     canvas.insertBefore(cur,child);
 }
 
-function addBottomWave(color){
+function addBottomWave(color, isBlur){
     var canvas = document.getElementById("waveBottom");
     var child = document.getElementById("waveTemp2");
 
@@ -86,6 +94,12 @@ function addBottomWave(color){
     cur.style.width = "20px";
     cur.style.height = "20px";
 
+    if(isBlur){
+        cur.style.width = "30px";
+        cur.style.height = "30px";
+        cur.style.filter = "blur(15px)"
+    }
+
     cur.style.backgroundColor = "none"
 
     cur.style.border = "solid " + color  + " 10px"
@@ -93,7 +107,7 @@ function addBottomWave(color){
 
     cur.style.top = numToString(height/2);
     cur.style.right = "-200px";
-    cur.style.transition = "3s"
+    cur.style.transition = "6s"
     canvas.insertBefore(cur,child);
 }
 
